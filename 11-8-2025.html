@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Calculator</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .calculator {
+      width: 320px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .calculator-input {
+      font-size: 1.5rem;
+      text-align: right;
+      height: 50px;
+      margin-bottom: 15px;
+      padding-right: 10px;
+      border-radius: 5px;
+    }
+    .btn-lg {
+      width: 70px;
+      height: 60px;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator shadow p-3 rounded">
+  <input type="text" id="display" class="form-control calculator-input" disabled />
+
+  <div class="d-flex flex-wrap justify-content-between">
+    <button class="btn btn-secondary btn-lg m-1" onclick="clearDisplay()">AC</button>
+    <button class="btn btn-secondary btn-lg m-1" onclick="backspace()">DEL</button>
+    <button class="btn btn-primary btn-lg m-1" onclick="appendOperator('%')">%</button>
+    <button class="btn btn-primary btn-lg m-1" onclick="appendOperator('/')">÷</button>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between">
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('7')">7</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('8')">8</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('9')">9</button>
+    <button class="btn btn-primary btn-lg m-1" onclick="appendOperator('*')">×</button>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between">
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('4')">4</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('5')">5</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('6')">6</button>
+    <button class="btn btn-primary btn-lg m-1" onclick="appendOperator('-')">−</button>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between">
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('1')">1</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('2')">2</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('3')">3</button>
+    <button class="btn btn-primary btn-lg m-1" onclick="appendOperator('+')">+</button>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between">
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('0')">0</button>
+    <button class="btn btn-light btn-lg m-1" onclick="appendNumber('.')">.</button>
+    <button class="btn btn-success btn-lg m-1 flex-grow-1" onclick="calculateResult()">=</button>
+  </div>
+</div>
+
+<script>
+  const display = document.getElementById('display');
+
+  function appendNumber(number) {
+    if (display.value === '0' && number !== '.') {
+      display.value = number;
+    } else {
+      display.value += number;
+    }
+  }
+
+  function appendOperator(operator) {
+    const lastChar = display.value.slice(-1);
+  
+    if (!['+', '-', '*', '/', '%', '.'].includes(lastChar)) {
+      display.value += operator;
+    }
+  }
+
+  function clearDisplay() {
+    display.value = '';
+  }
+
+  function backspace() {
+    display.value = display.value.slice(0, -1);
+  }
+
+  function calculateResult() {
+    try {
+      
+      let expression = display.value.replace(/÷/g, '/').replace(/×/g, '*');
+      let result = eval(expression);
+      display.value = result;
+    } catch (e) {
+      display.value = "Error";
+    }
+  }
+</script>
+
+</body>
+</html>

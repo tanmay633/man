@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Click Once</title>
+</head>
+<body>
+
+<button id="myButton">Click me</button>
+
+<script>
+  const button = document.getElementById('myButton');
+
+  button.addEventListener('click', () => {
+    button.textContent = "Clicked!";
+  }, { once: true });
+</script>
+
+</body>
+</html>

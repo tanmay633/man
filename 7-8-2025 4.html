@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Selected Option</title>
+</head>
+<body>
+
+<select id="colorSelect" onchange="showSelectedColor()">
+  <option value="">Select a color</option>
+  <option value="Red">Red</option>
+  <option value="Blue">Blue</option>
+  <option value="Green">Green</option>
+</select>
+
+<p id="selectedColor"></p>
+
+<script>
+  function showSelectedColor() {
+    const select = document.getElementById('colorSelect');
+    const selected = select.value;
+    document.getElementById('selectedColor').textContent = selected ? "Selected Color: " + selected : "";
+  }
+</script>
+
+</body>
+</html>

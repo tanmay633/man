@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Remove Highlight on Blur</title>
+</head>
+<body>
+
+<input type="text" 
+       onfocus="highlight(this)" 
+       onblur="removeHighlight(this)" 
+       placeholder="Click to focus" 
+       style="border: 2px solid gray;" />
+
+<script>
+  function highlight(element) {
+    element.style.borderColor = "blue";
+  }
+
+  function removeHighlight(element) {
+    element.style.borderColor = "gray";
+  }
+</script>
+
+</body>
+</html>

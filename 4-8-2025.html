@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Change Image on Mouseover and Restore on Mouseout</h2>
+
+<img id="myImage" src="yspm.jpg" alt="Image" width="300" height="200">
+
+<script>
+  let img = document.getElementById('myImage');
+  
+  img.onmouseover = function() {
+    this.src = 'hover_image.jpg';
+  };
+  
+  img.onmouseout = function() {
+    this.src = 'original_image.jpg';
+  };
+</script>
+
+</body>
+</html>

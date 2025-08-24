@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter USD - INR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    label, select, input, button {
+      margin: 10px 0;
+      font-size: 16px;
+      padding: 8px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Currency Converter (USD ↔ INR)</h2>
+
+  <label for="amount">Amount:</label><br>
+  <input type="number" id="amount" placeholder="Enter amount" min="0" step="any"><br>
+
+  <label for="currency">Convert from:</label><br>
+  <select id="currency">
+    <option value="USD">USD</option>
+    <option value="INR">INR</option>
+  </select><br>
+
+  <button id="convertBtn">Convert</button>
+
+  <div id="result"></div>
+
+  <script>
+    const convertBtn = document.getElementById('convertBtn');
+    const amountInput = document.getElementById('amount');
+    const currencySelect = document.getElementById('currency');
+    const resultDiv = document.getElementById('result');
+
+   
+    const exchangeRate = 83.12;
+
+    convertBtn.addEventListener('click', () => {
+      const amount = parseFloat(amountInput.value);
+      if (isNaN(amount) || amount <= 0) {
+        resultDiv.textContent = 'Please enter a valid positive amount.';
+        return;
+      }
+
+      const fromCurrency = currencySelect.value;
+      let convertedAmount;
+      let toCurrency;
+
+      if (fromCurrency === 'USD') {
+        convertedAmount = amount * exchangeRate;
+        toCurrency = 'INR';
+      } else {
+        convertedAmount = amount / exchangeRate;
+        toCurrency = 'USD';
+      }
+
+      resultDiv.textContent = `${amount.toFixed(2)} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Speed Calculator</title>
+</head>
+<body>
+
+<textarea id="typingArea" rows="6" cols="50" placeholder="Start typing..."></textarea>
+<p>Typing Speed: <span id="cps">0</span> characters per second</p>
+
+<script>
+  const textarea = document.getElementById('typingArea');
+  const cpsDisplay = document.getElementById('cps');
+  
+  let startTime = null;
+  let charCount = 0;
+  
+  textarea.addEventListener('input', () => {
+    if (startTime === null) {
+     
+      startTime = Date.now();
+      charCount = 0;
+    }
+    
+    charCount = textarea.value.length;
+    const elapsedSeconds = (Date.now() - startTime) / 1000;
+    
+    if (elapsedSeconds > 0) {
+      const cps = (charCount / elapsedSeconds).toFixed(2);
+      cpsDisplay.textContent = cps;
+    } else {
+      cpsDisplay.textContent = '0';
+    }
+    
+    if (charCount === 0) {
+    
+      startTime = null;
+      cpsDisplay.textContent = '0';
+    }
+  });
+</script>
+
+</body>
+</html>

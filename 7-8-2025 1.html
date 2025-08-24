@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Highlight Input on Focus</title>
+</head>
+<body>
+
+<input type="text" onfocus="highlight(this)" onblur="removeHighlight(this)" placeholder="Click to focus" />
+
+<script>
+  function highlight(element) {
+    element.style.borderColor = "blue";
+  }
+
+  function removeHighlight(element) {
+    element.style.borderColor = "";
+  }
+</script>
+
+</body>
+</html>
