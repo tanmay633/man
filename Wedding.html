@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melodia Event Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: rgba(242, 223, 214, 0.371);
+      color: #333;
+    }
+    .navbar {
+      background-color: transparent !important;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1050;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      transition: background-color 0.4s ease;
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107;
+      text-decoration: underline;
+    }
+    .dropdown-menu {
+      background-color: rgba(33, 37, 41, 0.95);
+      border-radius: 0.5rem;
+      backdrop-filter: blur(8px);
+    }
+    .dropdown-item { color: #fff; }
+    .dropdown-item:hover { background-color: #495057; }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      color: white;
+      max-width: 90%;
+      opacity: 0.85;
+      animation: fadeIn 2s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .text-container .btn {
+      margin-top: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .vs img, .n { width: 100%; border-radius: 10px; }
+
+    .footer-container {
+      background-image: url("silder2.webp");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      filter: brightness(0.2);
+      margin-top: 3rem;
+    }
+    .footer-container ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    .footer-container li a img:hover {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
+    }
+    .footer-container img.logo {
+      filter: brightness(5);
+    }
+    @media (max-width: 768px) {
+      .text-container {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+  
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index .html">
+        <img src="MELODIA-LOGO.webp" alt="Melodia Logo" height="50" width="100" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseable">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapseable">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="About.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Services</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="Wedding.html">Wedding</a></li>
+              
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <div class="hero">
+    <img src="indian-wedding-rituals.jpg" alt="Indian Wedding Rituals" />
+    <div class="text-container">
+      <h1><b>Wedding Planners in Kerala</b></h1>
+      <h5><i>Planning a wedding can be exciting but also overwhelming. That’s where we come in — ready to make your dream day a reality!</i></h5>
+      <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
+        <a href="tel:+918590010011" class="btn btn-warning">📞 Talk to Expert</a>
+        <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <h4><b>Enchanting Weddings with Melodia</b></h4>
+        <p>
+          Melodia’s wedding planners in Kerala provide a wide range of services to help couples create the perfect wedding day.
+          We begin by understanding your wishes and then work our magic to bring your dreams to life.
+        </p>
+      </div>
+      <div class="col-lg-6 vs mb-5">
+        <img src="weddin2.jpeg" alt="Wedding Planning" class="img-fluid" />
+      </div>
+      <div class="col-lg-6 mb-5"><img src="wedding3.webp" alt="" class="img-fluid n" /></div>
+      <div class="col-lg-6 mb-5">
+        <p>
+          In India, wedding planners in Kerala are superheroes, taking care of everything from venue selection to decor, guest coordination,
+          and entertainment. Whether traditional or destination weddings — Melodia makes your dream wedding come alive.
+        </p>
+      </div>
+      <div class="col-lg-12 mb-5">
+        <p>
+          Mayjohn P. J., owner of Melodia, brings happiness to Southern Indian weddings with unique, entertaining, and culturally inclusive events.
+          Notably, Melodia organized a high-profile wedding covered by The New York Times — a WHO-associated doctor's daughter's wedding,
+          strictly following COVID-19 protocols.
+        </p>
+      </div>
+      <div class="col-lg-12 mb-5">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/_8UqAZ5CwIA" title="YouTube video player"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+     
+        <div class="col-lg-4 col-6 mb-5">
+          <div class="card">
+            <img src="card1.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Houseboat Wedding Kerala</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+         <div class="col-lg-4 col-6  mb-4">
+          <div class="card">
+            <img src="card2.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Stage decoration Kochi</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+         <div class="col-lg-4 col-6 mb-4">
+          <div class="card">
+            <img src="card3.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>wedding cars</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+         <div class="col-lg-4 col-6 mb-4">
+          <div class="card">
+            <img src="card4.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Wedding dance Kerala</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+         <div class="col-lg-4 col-6 mb-4">
+          <div class="card">
+            <img src="card5.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Live Streaming Services</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div> <div class="col-lg-4 col-6 mb-4">
+          <div class="card">
+            <img src="card6.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Bridal make-up</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div> <div class="col-lg-4 col-6 mb-4">
+          <div class="card">
+            <img src="card7.jpg" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Groom and bridal wear</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div> <div class="col-lg-4  col-6 mb-4">
+          <div class="card">
+            <img src="card8.webp" class="card-img-top" alt="Houseboat Wedding" />
+            <div class="card-body text-center">
+              <div class="title mb-2"><b>Choreographers</b></div>
+              <a href="https://www.britannica.com/technology/houseboat" class="btn btn-warning me-2">Learn More</a>
+              <a href="https://www.whatsapp.com/" class="btn btn-success">💬 WhatsApp</a>
+            </div>
+          </div>
+        
+      
+    </div>
+  </div>
+
+  
+  <div class="footer-container">
+    <ul>
+      <li><a href="https://www.instagram.com/"><img src="ints2.png" alt="Instagram" height="50" width="50"></a></li>
+      <li><a href="https://www.whatsapp.com/"><img src="wh2.png" alt="WhatsApp" height="50" width="50"></a></li>
+      <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="YouTube" height="50" width="50"></a></li>
+      <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook" height="50" width="50"></a></li>
+    </ul>
+    <img src="MELODIA-LOGO.webp" alt="Melodia Logo" class="logo" height="100" width="100" />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

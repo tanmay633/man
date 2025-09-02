@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melodia Event Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: rgba(242, 223, 214, 0.371);
+      color: #333;
+    }
+
+    nav.navbar {
+      background-color: rgba(0, 0, 0, 0.0);
+      transition: background-color 0.4s ease;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      position: fixed;
+      width: 100%;
+      z-index: 1050;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffc107;
+      text-decoration: underline;
+    }
+
+    .dropdown-menu {
+      background-color: rgba(33, 37, 41, 0.95);
+      border-radius: 0.5rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-item {
+      color: #fff;
+    }
+
+    .dropdown-item:hover {
+      background-color: #495057;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      max-width: 70%;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .video {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.7);
+    }
+
+    .info {
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+
+    .info img {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .info h5 {
+      line-height: 1.8;
+      font-weight: 400;
+      color: #444;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-container {
+      background-image: url('silder2.webp');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      filter: brightness(0.2);
+    }
+
+    .footer-container ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .footer-container li a img {
+      transition: transform 0.3s ease;
+    }
+
+    .footer-container li a img:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-container img.logo {
+      filter: brightness(5);
+    }
+
+    .founder-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .founder-img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .text-container {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index .html">
+        <img src="MELODIA-LOGO.webp" alt="Event Agency Logo" height="50" width="100">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseable">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapseable">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="About.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="portfilo.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a href="Wedding.html" class="dropdown-item">Wedding</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <video autoplay muted loop class="video">
+    <source src="video1.webm" type="video/mp4">
+  </video>
+
+  <div class="text-container text-white">
+    <h1><b>About Melodia Event Management</b></h1>
+    <h5><i>From concept to execution, Kerala’s premier event management company delivers flawless experiences tailored to your unique vision.</i></h5>
+  </div>
+
+  <div class="info" id="About">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-md-4 text-center">
+          <img src="MELODIA-LOGO.webp" alt="Melodia Logo" class="img-fluid" />
+        </div>
+        <div class="col-md-8">
+          <h1><b>Welcome to Melodia Event Management Company</b></h1>
+          <h5>
+            We are an ISO 9001:2015-certified event management company based in Kerala, with over 15 years of experience. Melodia specializes in weddings, corporate, personal, regional, and destination events, delivering memorable experiences to clients across Kerala and beyond. Since 2010, we've organized over 750 weddings, 90 corporate events, and more. In 2025, we're on track to deliver 150+ outstanding events.
+            <br><br>
+            The name Melodia Events is often used informally, but our official name remains Melodia Event Management. Our journey began in 2008 in Thrissur, expanding through hard work to Kochi and other regions, where we now provide full-scale production and venue services.
+            <br><br>
+            Today, we stand as a trusted name in Kerala’s event industry, delivering excellence with creativity and care.
+          </h5>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-12">
+          <h5>
+            In 2008, our venture was initiated in Kuriachira, Thrissur. Initially, we handled event management tasks primarily in regions close to Thrissur and its surroundings. Our hard work has enabled us to expand from the neighborhoods of Thrissur to the popular territories of Cochin. Compared to other cities, we are now providing more services in Ernakulam (Kochi) through our own production house. What started as a small firm has now expanded into a multi-locality venue booking, selection, and event management service across Kerala.
+            <br><br>
+            We proudly serve all of Kerala, from bustling cities to serene villages, as one of the few Kerala-owned event management companies fully dedicated to the state. Deeply rooted in Kerala’s rich culture and traditions, we specialize in creating unforgettable events—whether for the Malayalam community on Kerala soil or destination weddings for guests from across India and beyond. Today, in 2025, Melodia Event Management is strongly represented in Thrissur, Kasaragod, Calicut, Trivandrum, Kannur, Kollam, Alleppey, Kottayam, Palakkad, Malappuram, and Kochi—the ten most dynamic cities of Kerala.
+          </h5>
+        </div>
+      </div>
+
+      <!-- Founder Section -->
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1><b>Mayjohn P J - A Visionary's Journey</b></h1>
+          <h5>
+            Mr. Mayjohn P. J., also known as Mayjohn Pindiyan, is the CEO and founder of Melodia Event Management Company. After completing his MBA, he worked at various IT firms in Thrissur and Kochi. However, his true calling was music—he performed as a professional singer in ganamelas and weddings.
+            <br><br>
+            Inspired by this creative background, he launched Melodia in 2008 when "event management" was a barely known concept in Kerala. Without an office for the first 3 years, his passion and vision led to the company's growth, with a formal office established in Thrissur in 2011.
+            <br><br>
+            By 2025, Melodia has offices across Kerala and is widely recognized for its unique approach to event curation, drawing from Mayjohn's roots in music and performance.
+          </h5>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="owern.webp" alt="Founder Mayjohn P J" class="img-fluid founder-img" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-container">
+    <ul>
+      <li><a href="https://www.instagram.com/"><img src="ints2.png" alt="Instagram" height="50" width="50"></a></li>
+      <li><a href="https://www.whatsapp.com/"><img src="wh2.png" alt="WhatsApp" height="50" width="50"></a></li>
+      <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="YouTube" height="50" width="50"></a></li>
+      <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook" height="50" width="50"></a></li>
+    </ul>
+    <img src="MELODIA-LOGO.webp" alt="Melodia Logo" class="logo" height="100" width="100" />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
